@@ -29,15 +29,16 @@ const DataFixtures = () => {
     //     latitude: result.weather_report.coordinates.lat,
     //     longitude: result.weather_report.coordinates.lon,
     // }));
-    const cor = post.map((result) => result.weather_report.coordinates?.lat)
-    const corr = post.map((result) => result.weather_report.coordinates?.lon)
+    const postt = post.slice(0, 1)
+    const cor = postt.map((result) => result.weather_report.coordinates?.lat)
+    const corr = postt.map((result) => result.weather_report.coordinates?.lon)
     // const center = geolib.getCenter([
     //     { latitude: 52.516272, longitude: 13.377722 },
     //     { latitude: 51.515, longitude: 7.453619 },
     //     { latitude: 51.503333, longitude: -0.119722 },
     // ]);
 
-    const center = getCenter(cor, )
+    const center = getCenter(cor, corr)
     const [selectedLocation, setSelectedLocation] = useState({});
     const [viewport, setViewport] = useState({
         latitude: cor,
@@ -63,7 +64,7 @@ const DataFixtures = () => {
 
 
             <div className="row">
-                {post.map((item) => (
+                {postt.map((item) => (
                     <div key={item.id} className="col-md-6 col-sm-6 col-6 mt-3">
                         {item.id}
                         <br />
@@ -97,10 +98,10 @@ const DataFixtures = () => {
                             mapboxAccessToken="pk.eyJ1IjoiZGlhYmxvb28iLCJhIjoiY2t0NTl4NHZ4MDZmcTJvanA2amZ2ZDQ1dCJ9.i7LqzzkWl031Iy-saXGAuw"
                             {...viewport}
                             onViewportChange={(nextViewport) => setViewport(nextViewport)}
-                            style={{ width: 600, height: 400 }}
+                            style={{ width: 400, height: 400 }}
                         >
 
-                            <Marker
+                            {/* <Marker
                                 longitude={item.weather_report.coordinates?.lon}
                                 latitude={item.weather_report.coordinates?.lat}
                                 offsetLeft={-20}
@@ -114,7 +115,7 @@ const DataFixtures = () => {
                                     🐑
                                 </p>
 
-                            </Marker>
+                            </Marker> */}
 
 
 
