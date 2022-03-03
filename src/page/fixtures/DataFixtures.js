@@ -40,8 +40,6 @@ const DataFixtures = () => {
     const center = getCenter(cor, )
     const [selectedLocation, setSelectedLocation] = useState({});
     const [viewport, setViewport] = useState({
-        width: "100%",
-        height: "100%",
         latitude: cor,
         longitude: corr,
         zoom: 11,
