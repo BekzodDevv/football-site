@@ -1,0 +1,11 @@
+.teaminfo {
+    &__svgg{
+        a {
+           svg {
+               &:hover{
+                   fill: blue;
+               }
+           }
+        }
+    }
+}

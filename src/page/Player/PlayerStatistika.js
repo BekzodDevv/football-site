@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useParams } from 'react-router-dom'
+import Card from '../../components/Card';
 
 
 
@@ -19,51 +20,17 @@ const PlayerStatistika = () => {
 
 
     return (
-        <div className="playerStatistika">
+        <div className="playerStatistika mt-4">
             <div className="container">
                 <div className="row bgcolor">
-                    <div className="col-md-2 col-sm-2 col-2 mx-auto">
-
-                        image_path  <img src={post.image_path} alt="" />
+                    <div className="col-md-6 col-sm-6 col-12 mx-auto my-auto text-center">
+                        <img src={post.image_path} alt="image_path" className=" img-fluid" />
                     </div>
-                    <div className="col-md-2 col-sm-2 col-2 mx-auto">
-
-                        birthcountry{post.birthcountry}
-                        birthdate {post.birthdate}
-                        birthplace   {post.birthplace}
-                        common_name   {post.common_name}
-                        firstname   {post.firstname}
-                        fullname   {post.fullname}
-                        height   {post.height}
-                        weight  {post.weight}
-                        nationality     {post.nationality}
+                    <div className="col-md-6 col-sm-6 col-12 mx-auto">
+                        <Card post={post} />
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-            {/* birthcountry: "Poland"
-            birthdate: "18/04/1985"
-            birthplace: "Kostrzyn nad Odrą"
-            common_name: "Ł. Fabiański"
-            country_id: 2
-            display_name: "Łukasz Fabiański"
-            firstname: "Łukasz"
-            fullname: "Łukasz Fabiański"
-            height: "190 cm"
-            image_path: "https://cdn.sportmonks.com/images/soccer/players/29/733.png"
-            lastname: "Fabiański"
-            nationality: "Poland"
-            player_id: 733
-            position_id: 1
-            stats: {data: Array(0)}
-            team_id: 1
-            weight: "83 kg" */}
-
         </div>
     )
 }

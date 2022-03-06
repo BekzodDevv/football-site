@@ -1,25 +1,20 @@
 import {  useState } from 'react'
 import axios from "axios";
 
-// const baseURL = "H0ofT7ADX8Ju2mPZ1E63YXdSDaRsyyX2Dq9Xjx5VvwgF9nBRBRDudElj1IWZ";
 
 const TeamSearch = () => {
-
     const [image, setImage] = useState(" ");
     const [post, setPost] = useState([]);
-
 
     const getValue = (event) => {
         setImage(event.target.value);
     };
-
     const getImages = () => {
         axios.get(`https://soccer.sportmonks.com/api/v2.0/teams/search/${image}?api_token=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setPost(response.data.data);
             })
     }
-
   
     return (
         <div>

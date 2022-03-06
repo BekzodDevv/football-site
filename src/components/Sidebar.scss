@@ -1,0 +1,40 @@
+.sidebarr {
+    display: none;
+    &__content {
+        .nav-items {
+            width: 100%;
+             padding-left: 0rem !important;
+            .nav-item {
+                list-style: none;
+                text-align: center;
+                padding-left: 0rem !important;
+                a {
+                    text-decoration: none;
+                    font-size: inherit;
+                    color: inherit;
+                    display: block;
+                    padding: 0.5rem 0;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0.4rem;
+                        height: 100%;
+                        background-color: #0381ff33;
+                        transform-origin: bottom;
+                        transform: scale(0);
+                        overflow-x: hidden;
+                        transition: transform 0.6s, 0.2s width 0.5s cubic-bezier(1, -0.16, 0, 1.32);
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+}

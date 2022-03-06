@@ -7,6 +7,8 @@ import Search from './Search';
 
 
 const Leagues = () => {
+
+
     const [post, setPost] = useState([]);
     useEffect(() => {
         axios.get(`https://soccer.sportmonks.com/api/v2.0/leagues?api_token=${process.env.REACT_APP_API_KEY}`)
@@ -17,24 +19,28 @@ const Leagues = () => {
 
 
     return (
-        <div>
+        <>
 
             <Search />
 
 
-            <div className="row">
+            <div className="leagues row container mx-auto mt-4">
                 {post.map((item) => (
-                    <div key={item.id} className="col-md-3 col-sm-3 col-12">
+                    <div key={item.id} className="leagues__card col-md-6 col-sm-6 col-12">
                         <Link to={`/leaguesid/${item.id}`}>
                             {item.active}
-                            {item.country_id}
                             {item.is_cup}
                             {item.is_friendly}
-                            {item.legacy_id}
                             {item.live_standings}
-                            <img src={item.logo_path} alt="" className="img-fluid" />
-                            {item.name}
-                            {item.type}
+                            <div className="mx-auto text-center">
+                                <img src={item.logo_path} alt="name" className="leagues__image img-fluid" />
+                            </div>
+                            <div className="text-center my-3">
+                                {item.name}
+                            </div>
+                            <div className="text-center">
+                                {item.type}
+                            </div>
                         </Link>
 
                     </div>
@@ -42,7 +48,7 @@ const Leagues = () => {
             </div>
 
 
-        </div>
+        </>
     )
 }
 

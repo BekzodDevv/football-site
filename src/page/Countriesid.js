@@ -17,30 +17,36 @@ const Countriesid = () => {
 
 
     return (
-        <div className="row">
-            <div className="col-md-3 col-sm-3 col-12">
-                <Link to={`/countriesid/${id}/players/${post.id}`}>
-                    <img src={post.image_path} alt="" />
-                    <h5>{post.name}</h5>
-                </Link>
+        <div className="container">
+            <div className="row ">
+                <div className="col-md-3 mx-auto ">
+                    <div className="text-center">
+                        <img src={post.image_path} alt="" className="img-fluid" />
+                        <h5 className="mt-3">{post.name}</h5>
+                        <div>{post.extra?.continent}</div>
+                        <div>{post.extra?.iso}</div>
+                        {/* {post.extra?.latitude}
+                        {post.extra?.longitude} */}
+                        <div>{post.extra?.sub_region}</div>
+                        <div>{post.extra?.world_region}</div>
+                    </div>
 
-                {post.extra?.continent}
-                <img src={post.extra?.flag} alt="" />
-                {post.extra?.iso}
-                <Link to={`/countriesid/${id}/team/${post.id}`}>
-                    {post.extra?.iso2}
-                    {post.extra?.latitude}
-                    {post.extra?.longitude}
-                    {post.extra?.sub_region}
-                    {post.extra?.world_region}
-                </Link>
+                    <div className="d-flex align-items-center justify-content-between mt-3">
+                        <Link to={`/countriesid/${id}/team/${post.id}`}>
+                            Team
+                        </Link>
+                        <Link to={`/countriesid/${id}/players/${post.id}`}>
+                            Players
+                        </Link>
+                    </div>
+
+
+                </div>
+
+
 
 
             </div>
-
-
-
-
         </div>
     )
 }

@@ -20,17 +20,23 @@ const Search = () => {
   }
 
 
-
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       <input
         type="text"
         name="image"
+        className="form-control w-25"
         placeholder="Search images..."
         onChange={getValue}
         onKeyDown={getImages}
       />
-      <button onClick={getImages} type="submit">Search</button>
+      <button
+        onClick={getImages}
+        type="submit"
+        className="btn btn-danger"
+        >
+        Search
+      </button>
 
       <div className="row">
         {post.map((item) => (

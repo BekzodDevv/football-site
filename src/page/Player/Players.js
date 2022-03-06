@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from "axios";
 import { Link, useParams } from 'react-router-dom'
 import PlayerSearch from "./PlayerSearch";
+import Card from '../../components/Card';
 
 
 const Players = () => {
@@ -17,35 +18,23 @@ const Players = () => {
 
 
     return (
-        <div className="row">
-
+        <div className="container">
             <PlayerSearch />
-
-            <div className="col-md-3 col-sm-3 col-12">
-                {post.map((item, index) => (
-                    <div key={index}>
-                        <Link to={`/countriesid/:id/players/:id/statistike/${item.player_id}`}>
-                            <h1>{item.player_id}</h1>
-                            {item.birthcountry}
-                            {item.birthdate}
-                            {item.birthplace}
-                            {item.common_name}
-                            {item.country_id}
-                            {item.display_name}
-                            {item.firstname}
-                            {item.lastname}
-                            {item.fullname}
-                            {item.height}
-                            {item.weight}
-                            {item.nationality}
-                            <img src={item.image_path} alt="" />
-                        </Link>
-
+            <div className="row mx-auto">
+                {post.map((post, index) => (
+                    <div className="col-md-4 col-sm-6 col-12   mt-5">
+                        <div key={index} className="mx-auto">
+                            <Link to={`/countriesid/:id/players/:id/statistike/${post.player_id}`}>
+                                <div className="text-center">
+                                    <img src={post.image_path} alt="image_path" className="img-fluid " />
+                                </div>
+                                <div className="mt-3">
+                                   <Card post={post} />
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 ))}
-
-
-
             </div>
         </div>
     )

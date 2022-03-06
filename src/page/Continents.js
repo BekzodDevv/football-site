@@ -16,13 +16,11 @@ const Continents = () => {
             })
     }, []);
 
-    console.log(post)
     return (
-        <div>
-            <div className="row">
-
+        <>
+            <div className="continents row container mx-auto text-center mt-2">
                 {post.map(({ id, name }) => (
-                    <div key={id} className="col-md-3 col-sm-3 col-12">
+                    <div key={id} className="col-md-3 col-sm-3 col-12 mt-3">
                         <Link to={`/continents/${id}`}>
                             <p>{name}</p>
                         </Link>
@@ -33,7 +31,7 @@ const Continents = () => {
 
 
 
-        </div>
+        </>
     )
 }
 

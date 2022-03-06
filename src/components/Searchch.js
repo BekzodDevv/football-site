@@ -1,20 +1,21 @@
 import React from 'react'
 
 
-const Searchch =  React.memo(({ getValue, getImages}) => {
+const Searchch = React.memo(({ getValue, getImages }) => {
     return (
-        <div className="row">
+        <div className="d-flex align-items-center justify-content-center my-3">
 
-<input
+            <input
                 type="text"
                 name="image"
-                placeholder="Search Teams..."
+                className="form-control w-25"
+                placeholder="Search Player..."
                 onChange={getValue}
             // onKeyDown={getImages}
             />
-            <button onClick={getImages} type="submit">Search</button>
-      
-      
+            <button onClick={getImages} type="submit" className="btn btn-danger">Search</button>
+
+
         </div>
     )
 })
