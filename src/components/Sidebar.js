@@ -73,13 +73,18 @@ const Sidebar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="countries"  activeClassName="active">
+                            <NavLink to="countries" activeClassName="active">
                                 Countries
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="teamsearch" activeClassName="active" >
                                 Teamsearch
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="season" activeClassName="active" >
+                                Season
                             </NavLink>
                         </li>
                     </ul>

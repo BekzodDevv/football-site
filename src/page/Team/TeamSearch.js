@@ -1,9 +1,9 @@
-import {  useState } from 'react'
+import { useState } from 'react'
 import axios from "axios";
 
 
 const TeamSearch = () => {
-    const [image, setImage] = useState(" ");
+    const [image, setImage] = useState("");
     const [post, setPost] = useState([]);
 
     const getValue = (event) => {
@@ -11,21 +11,26 @@ const TeamSearch = () => {
     };
     const getImages = () => {
         axios.get(`https://soccer.sportmonks.com/api/v2.0/teams/search/${image}?api_token=${process.env.REACT_APP_API_KEY}`)
-            .then((response) => {
+            // https://soccer.sportmonks.com/api/v2.0/teams/search/manchester?api_token={API_TOKEN}    
+            .then(response => {
                 setPost(response.data.data);
             })
     }
-  
+    console.log(post)
+
     return (
-        <div>
-            <input
-                type="text"
-                name="image"
-                placeholder="Search Teams..."
-                onChange={getValue}
-            // onKeyDown={getImages}
-            />
-            <button onClick={getImages} type="submit">Search</button>
+        <>
+            <div className="d-flex justify-content-center align-items-center">
+                <input
+                    type="text"
+                    name="image"
+                    placeholder="Search Teams..."
+                    className="form-control"
+                    onChange={getValue}
+                // onKeyDown={getImages}
+                />
+                <button onClick={getImages} type="submit">Search</button>
+            </div>
 
             {post.length === 0 ? (
                 <div>NO DATA</div>
@@ -47,7 +52,7 @@ const TeamSearch = () => {
 
 
 
-        </div>
+        </>
     )
 }
 

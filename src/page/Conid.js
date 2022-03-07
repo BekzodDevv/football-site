@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom'
 
 
 
-
 const Conid = () => {
     const { id } = useParams()
     const [post, setPost] = useState([]);

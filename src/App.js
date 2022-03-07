@@ -18,6 +18,9 @@ import TeamSearch from './page/Team/TeamSearch';
 import Players from './page/Player/Players';
 import TeamInfo from './page/Team/TeamInfo';
 import PlayerStatistika from './page/Player/PlayerStatistika';
+import Season from './page/Season/Season';
+import SeasonSearch from './page/Season/SeasonSearch';
+import SeasonTeam from './page/Season/SeasonTeam';
 
 
 
@@ -51,6 +54,10 @@ function App() {
           <Route path="/countriesid/:id/players/:id" element={<Players />} />
           <Route path="/countriesid/:id/players/:id/statistike/:id" element={<PlayerStatistika />} />
 
+
+          <Route path="season" element={<Season />} />
+          <Route path="/seasonsearch/:id" element={<SeasonSearch />} />
+          <Route path="/seasonteam/:id" element={<SeasonTeam />} />
 
 
           <Route path="lastfixtures" element={<LastFixtures />} />

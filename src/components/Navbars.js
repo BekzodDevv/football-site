@@ -82,6 +82,13 @@ const Navbars = () => {
                                 </Link>
                             </NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink>
+                                <Link to="season" >
+                                    Season
+                                </Link>
+                            </NavLink>
+                        </NavItem>
 
 
                     </Nav>
